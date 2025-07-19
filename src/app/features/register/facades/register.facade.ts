@@ -26,17 +26,25 @@ export class RegisterFacade {
         .register(loginFormRawValue)
         .subscribe((user: RegisterAdaptedResponse) => {
           this.snakbarOpen(user.fullName);
-          this.form.reset();
+          this.resetRegisterForm();
         })
   }
 
   private snakbarOpen(message: string): void {
-        this.matSnackBar.openFromComponent(SnakbarComponent, {
-            data: {
-                message: `o usuário ${message} foi criado com sucesso!`
-            },
-            duration: 3000,
-        });
-    }
+    this.matSnackBar.openFromComponent(SnakbarComponent, {
+        data: {
+            message: `o usuário ${message} foi criado com sucesso!`
+        },
+        duration: 3000,
+    });
+  }
+
+  private resetRegisterForm(): void {
+    this.form.reset();
+
+    Object.keys(this.form.controls).forEach((field) => {
+      this.form.controls[field].setErrors(null);
+    });
+  }
 
 }
