@@ -20,7 +20,7 @@ export class RegisterFacade {
       return this.registerForm.builder();
   }
   
-  public async onRegisterSubmit(): Promise<any> {
+  public onRegisterSubmit(): void {
     const loginFormRawValue = this.form.getRawValue();
     this.registerService
         .register(loginFormRawValue)

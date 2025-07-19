@@ -1,21 +1,27 @@
 import { TestBed } from '@angular/core/testing';
-import { RouterTestingModule } from '@angular/router/testing';
 import { UserRegisterComponent } from './user-register.component';
+import { RegisterFacade } from './facades/register.facade';
 
-describe('AppComponent', () => {
-  beforeEach(async () => {
-    await TestBed.configureTestingModule({
-      imports: [],
-      declarations: [
-        UserRegisterComponent
-      ],
-    }).compileComponents();
-  });
+describe('UserRegisterComponent', () => {
+  let component: UserRegisterComponent;
+  const registerFacadeStub = jasmine.createSpyObj('RegisterFacade', ['onRegisterSubmit']);
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(UserRegisterComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+  beforeEach(() => {
+        TestBed.configureTestingModule({
+          declarations: [
+            UserRegisterComponent
+          ],
+          providers: [
+            UserRegisterComponent,
+            { provide: RegisterFacade, useValue: registerFacadeStub }
+          ]
+        }).compileComponents();
+        component = TestBed.inject(UserRegisterComponent);
+    
+      });
+
+  it('should be created', () => {
+    expect(component).toBeTruthy();
   });
 
 });

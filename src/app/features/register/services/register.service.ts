@@ -5,7 +5,6 @@ import { map } from 'rxjs/operators';
 import { RegisterAdapter } from '../adapters/register.adapter';
 import { REGISTER_URLS } from '../constants/commons.constants';
 import { RegisterAdaptedResponse, RegisterRequest, RegisterResponse } from '../models/register.model';
-import { UserRegisterModule } from '../user-register.module';
 
 @Injectable()
 export class RegisterService {

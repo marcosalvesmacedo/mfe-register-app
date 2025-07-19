@@ -1,6 +1,5 @@
 import { Injectable } from "@angular/core";
 import { RegisterAdaptedResponse, RegisterResponse } from "../models/register.model";
-import { UserRegisterModule } from "../user-register.module";
 
 @Injectable()
 export class RegisterAdapter {
