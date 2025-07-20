@@ -7,7 +7,7 @@ Esse projeto foi desenvolvido utilizando angular 15 + a biblioteca de MFE Module
 Primeiramente faça a instalação do node v20.18.2 e tenha o vscode instalado na sua maquina.
 
 Para rodar esse projeto é necessário abrir uma janela do cmd e naveguar até a raiz do projeto e dar o comando npm install.
-Após isso, na mesma janela do cmd de o comando npm run start:app. Esse comando irá rodar o projeto mfe-register-app na porta 4201.cces-app na porta 4202.
+Após isso, na mesma janela do cmd de o comando npm run start:app. Esse comando irá rodar o projeto mfe-register-app na porta 4201.
 
 Para acessar abra o navegador de sua preferência e digite http://localhost:4201/. Isso te levará para a tela de cadastrar usuários.
 
